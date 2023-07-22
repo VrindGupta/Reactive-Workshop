@@ -49,6 +49,12 @@ public class Exercise1 {
         StreamSources.intNumbersStream()
                 .flatMap(id -> StreamSources.userStream().filter(user -> user.getId() == id))
                 .forEach(user -> System.out.println(user.getId()+ ":" +user.getFirstName()));
+
+        System.out.println("ANOTHER WAY FOR THE ABOVE");
+        StreamSources.userStream()
+                .filter(user -> StreamSources.intNumbersStream()
+                        .anyMatch(id -> id == user.getId()))
+                .forEach(user -> System.out.println(user.getId()+ ":" +user.getFirstName()));
     }
 
 }
