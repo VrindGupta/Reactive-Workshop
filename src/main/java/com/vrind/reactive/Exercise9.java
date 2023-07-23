@@ -1,6 +1,4 @@
-package io.javabrains.reactiveworkshop;
-
-import com.vrind.reactive.ReactiveSources;
+package com.vrind.reactive;
 
 import java.io.IOException;
 
